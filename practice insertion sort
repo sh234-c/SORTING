@@ -1,0 +1,46 @@
+// INSERTION SORT PRACTICE 
+#include <stdio.h>
+
+void printArray(int*A,int n){
+    for(int i=0;i<n;i++){
+        printf("%d",A[i]);
+    }
+    printf("\n");
+}
+// void insertionSort(int*A,int n){
+//     int key,j;//key is the smallest element which is to be inserted
+//     for(int i=1;i<n-1;i++){
+//         key=A[i];//element which is moved in left direction for insertion
+//         j=i-1;
+//         while(j>=0 && A[j]>key){//bcoz key goes to A[-1] also
+//         A[j+1]=A[j];
+//         j--;
+//         }
+//         A[j+1]=key;
+            
+//         }
+//     }
+void insertionSort(int*A,int n){
+    int key,j;
+    for(int i=1;i<n-1;i++){
+        key=A[i];//element which is to be moved in left direction
+        j=i-1;
+        while(j>=0 && A[j]>key){
+            A[j+1]=A[j];
+            j--;
+        }
+        A[j+1]=key;
+        }
+        
+    }
+
+
+
+int main(){
+    int A[]={2,5,9,8,1,6};
+    int n=6;
+    printArray(A,n);
+    insertionSort(A,n);
+    printArray(A,n);
+    return 0;
+}
